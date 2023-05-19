@@ -10,3 +10,7 @@ body{
     border: #fbaf00 5px;
     text-align: center;
 }
+
+#info-seleccionada{
+    background-color: #df9b6d;
+}
