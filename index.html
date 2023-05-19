@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <title>Supermercado Los Devs</title>
+</head>
+<body>
+   <img  width="50px"src="https://cdn-icons-png.flaticon.com/512/3394/3394009.png" alt="">
+    <h1>Supermercado los Devs</h1>
+
+    <div id="contenedor-1">
+        <h4>Cantidad de productos a mostrar</h4> 
+        <select name="cant-productos" id="cant-productos">
+            <option value="">1</option>
+            <option value="">3</option>
+            <option value="">7</option>
+            <option value="">10</option>
+        </select>
+
+        <h4>Cantidad permitida por cada producto</h4>
+        <select name="cant-producto-permitida" id="cant-producto-permitida">
+            <option value="">1</option>
+            <option value="">15</option>
+            <option value="">25</option>
+            <option value="">50</option>
+        </select>
+        <p>Colores</p>
+        <select name="select-colores" id="select-colores">
+            <option value="">Ninguno(verano)</option>
+            <option value="">Otoño</option>
+            <option value="">Invierno</option>
+            <option value="">Primavera</option>
+        </select>
+        <br><br>
+        <button onclick="generarCambios()">Generar</button>
+    </div>
+
+    <div id="informacion-seleccionada">
+
+    </div>
+
+    <div id="contenedor-productos">
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

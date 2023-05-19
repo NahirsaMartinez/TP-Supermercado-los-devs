@@ -1,0 +1,12 @@
+body{
+    display: grid;
+    place-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#contenedor-1{
+    width: 500px;
+    background-color: #ffd639;
+    border: #fbaf00 5px;
+    text-align: center;
+}
