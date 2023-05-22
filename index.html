@@ -12,7 +12,7 @@
     <h1>Supermercado Los Devs</h1>
 
     <div id="contenedor-1">
-        <h4>Cantidad de productos a mostrar</h4> 
+        <p>Cantidad de productos a mostrar</p> 
         <select name="cant-productos-mostrar" id="cant-productos-mostrar">
             <option value="1">1</option>
             <option value="3">3</option>
@@ -20,7 +20,7 @@
             <option value="10">10</option>
         </select>
 
-        <h4>Cantidad permitida por cada producto</h4>
+        <p>Cantidad permitida por cada producto</p>
         <select name="cant-producto-permitida" id="cant-producto-permitida">
             <option value="1">1</option>
             <option value="15">15</option>
@@ -34,16 +34,25 @@
             <option value="invierno">Invierno</option>
             <option value="primavera">Primavera</option>
         </select>
-        <br><br>
-        <button onclick="generarCambios()">Generar</button>
+        <br>
+        <button onclick="generarCambios()" id="boton-generar">Generar</button>
     </div>
-
+    
     <div id="info-seleccionada">
 
     </div>
 
     <div id="contenedor-productos">
-
+       <!--<div class="producto">
+          <img src="" alt="">
+          <h3>Producto</h3>
+          <p>Opciones de pago:</p>
+          <select name="producto" id="producto-mostrado">
+            <option value="1">Efectivo</option>
+            <option value="2">Débito</option>
+            <option value="3">Crédito</option>
+          </select>
+        </div>-->
     </div>
 
     <script src="script.js"></script>
