@@ -64,11 +64,10 @@ function infoCambios() {
     <p> La cantidad de productos permitidos a mostrar ${opcSeleccionada2} </p>
     <p> El tema seleccionado es ${opcSeleccionada3} </p>
     `;
-
-
 }
+
 /**
- * Imprime la cantidad de productos en base al numero seleccionado previamente
+ * Imprime la cantidad de productos y en base al numero seleccionado previamente
  */
 function generarProductos() {
 
@@ -76,10 +75,15 @@ function generarProductos() {
     const cantidadProductos = parseInt(selectCantProdMostrar.value);
 
     for (let i = 0; i < cantidadProductos; i++) {
-       
-        
+
         producto = PRODUCTOS[i];
 
+        let opcionesCantidad = "";
+        const cantidadPermitida = parseInt(selectCantProdPermitida.value);
+
+    for (let j = 1; j <= cantidadPermitida; j++) {
+      opcionesCantidad += `<option value="${j}">${j}</option>`;
+    }
         divProdMostrados.innerHTML += `
         <div class="producto">
         <img src="${producto.imagen}" alt="Producto ${i}">
@@ -91,16 +95,18 @@ function generarProductos() {
           <option value="3">Crédito</option>
         </select>
         <p>Seleccione Cantidad </p>
-        <select name ="producto-cant" id="producto-cant-total">
-        <option> ${opcSeleccionada2} </option>
+        <select name="producto-cant" id="producto-cant-total">
+        ${opcionesCantidad}
         </select>
-        <opction> <br>
+        <br>
         <button>Comprar</button>
+        </div>
         `;
     
     }
 
 }
+
 
  /**
   * Llama a las dos anteriores funciones al hacer clic
@@ -108,4 +114,5 @@ function generarProductos() {
 function generarCambios() {
     infoCambios();
     generarProductos();
+    
 }
