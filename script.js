@@ -89,13 +89,13 @@ function generarProductos() {
         <img src="${producto.imagen}" alt="Producto ${i}">
         <h3>${producto.nombre}</h3>
         <p>Opciones de pago:</p>
-        <select name="producto" id="producto-mostrado ${i}">
+        <select name="producto" class="producto-mostrado">
           <option value="1">Efectivo</option>
           <option value="2">Débito</option>
           <option value="3">Crédito</option>
         </select>
         <p>Seleccione Cantidad </p>
-        <select name="producto-cant" id="producto-cant-total ${i}">
+        <select name="producto-cant" class="producto-cant-total">
         ${opcionesCantidad}
         </select>
         <br>
@@ -147,6 +147,7 @@ function cambiarColorFondo() {
                     producto.style.backgroundColor = "#cdb4db";
                 }
                 break;
+            default:
         
         }
     }
