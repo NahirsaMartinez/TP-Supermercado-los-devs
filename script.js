@@ -67,7 +67,7 @@ function infoCambios() {
 }
 
 /**
- * Imprime la cantidad de productos y en base al numero seleccionado previamente
+ * Imprime la cantidad de productos y de unidades al numero seleccionado previamente
  */
 function generarProductos() {
 
@@ -81,38 +81,84 @@ function generarProductos() {
         let opcionesCantidad = "";
         const cantidadPermitida = parseInt(selectCantProdPermitida.value);
 
-    for (let j = 1; j <= cantidadPermitida; j++) {
-      opcionesCantidad += `<option value="${j}">${j}</option>`;
-    }
+        for (let j = 1; j <= cantidadPermitida; j++) {
+            opcionesCantidad += `<option value="${j}">${j}</option>`;
+        }
         divProdMostrados.innerHTML += `
         <div class="producto">
         <img src="${producto.imagen}" alt="Producto ${i}">
         <h3>${producto.nombre}</h3>
         <p>Opciones de pago:</p>
-        <select name="producto" id="producto-mostrado">
+        <select name="producto" id="producto-mostrado ${i}">
           <option value="1">Efectivo</option>
           <option value="2">Débito</option>
           <option value="3">Crédito</option>
         </select>
         <p>Seleccione Cantidad </p>
-        <select name="producto-cant" id="producto-cant-total">
+        <select name="producto-cant" id="producto-cant-total ${i}">
         ${opcionesCantidad}
         </select>
         <br>
-        <button>Comprar</button>
+        <button class="boton-comprar">Comprar</button>
         </div>
         `;
-    
+
     }
 
 }
+/**
+ * cambia el color del fondo de los divs 'producto' dependiendo si es par o no, tendra un color diferente. 
+ * Se realiza tomando los elementos generados con 'getElementsByClassName', en base a eso calcula si el numero es par o no para
+ * darle un color diferente.
+ */
+function cambiarColorFondo() {
+    const divProductos = document.getElementsByClassName('producto');
+
+    for (let i = 0; i < divProductos.length; i++) {
+        const producto = divProductos[i];
+        const numPar = (i + 1) % 2 === 0;
+
+        switch (selectColores.value) {
+            case "verano":
+                if (numPar) {
+                    producto.style.backgroundColor = "#f9dc5c";
+                } else {
+                    producto.style.backgroundColor = "#fcd29f";
+                }
+                break;
+            case "otonio":
+                if (numPar) {
+                    producto.style.backgroundColor = "#f5cda7";
+                } else {
+                    producto.style.backgroundColor = "#faa381";
+                }
+                break;
+            case "invierno":
+                if (numPar) {
+                    producto.style.backgroundColor = "#c6dbf0";
+                } else {
+                    producto.style.backgroundColor = "#85c7de";
+                }
+                break;
+            case "primavera":
+                if (numPar) {
+                    producto.style.backgroundColor = "#ffc8dd";
+                } else {
+                    producto.style.backgroundColor = "#cdb4db";
+                }
+                break;
+        
+        }
+    }
+}
 
 
- /**
-  * Llama a las dos anteriores funciones al hacer clic
-  */
+/**
+ * Llama a las anteriores funciones 
+ */
 function generarCambios() {
     infoCambios();
     generarProductos();
-    
+    cambiarColorFondo();
+
 }
